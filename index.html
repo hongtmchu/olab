@@ -3,88 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OLab</title>
+    <title>OLab - Optimization Lab</title>
     <style>
         body {
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f7f7f7;
+            background-color: #f4f4f9;
             color: #333;
+            line-height: 1.6;
         }
         header {
-            background-color: #3b5998; /* Blue */
-            color: white;
-            padding: 2em 0;
             text-align: center;
+            padding: 2em 0;
+            background: linear-gradient(135deg, #4B0082, #4682B4);
+            color: #fff;
+            border-bottom: 5px solid #4B0082;
         }
         nav {
             text-align: center;
             padding: 1em;
-            background-color: #6a0dad; /* Purple */
+            background: #4682B4;
         }
         nav a {
-            color: white;
+            color: #fff;
             margin: 0 1em;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: bold;
             cursor: pointer;
         }
         nav a:hover {
             text-decoration: underline;
         }
         section {
-            margin: 2em auto;
+            display: none;
             padding: 2em;
             max-width: 900px;
-            background-color: white;
+            margin: auto;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2em;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            display: none;
+            border-left: 5px solid #4682B4;
         }
-        section.active {
+        #home {
             display: block;
         }
         h2 {
-            color: #3b5998; /* Blue */
-            text-align: center;
+            color: #4B0082;
+            border-bottom: 2px solid #4682B4;
+            padding-bottom: 0.3em;
         }
         a {
-            color: #6a0dad; /* Purple */
+            color: #4682B4;
             text-decoration: none;
         }
         a:hover {
             text-decoration: underline;
         }
-        footer {
-            text-align: center;
-            padding: 1em;
-            background-color: #3b5998; /* Blue */
-            color: white;
-            margin-top: 2em;
-        }
     </style>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const links = document.querySelectorAll("nav a");
-            const sections = document.querySelectorAll("section");
-            
-            sections[0].classList.add("active");
-            
-            links.forEach(link => {
-                link.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    const targetId = link.getAttribute("href").substring(1);
-                    sections.forEach(section => {
-                        if (section.id === targetId) {
-                            section.classList.add("active");
-                        } else {
-                            section.classList.remove("active");
-                        }
-                    });
-                });
-            });
-        });
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => section.style.display = 'none');
+            document.getElementById(sectionId).style.display = 'block';
+        }
     </script>
 </head>
 <body>
@@ -93,44 +76,46 @@
     <p>Optimal - Operational - Open</p>
 </header>
 <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#publications">Publications</a>
-    <a href="#teaching">Teaching</a>
-    <a href="#contact">Contact</a>
+    <a onclick="showSection('home')">Home</a>
+    <a onclick="showSection('projects')">Projects</a>
+    <a onclick="showSection('publications')">Publications</a>
+    <a onclick="showSection('members')">Members</a>
+    <a onclick="showSection('contact')">Contact</a>
 </nav>
-<section id="about" class="active">
-    <h2>About OLab</h2>
+<section id="home">
+    <h2>Welcome to OLab</h2>
     <p>We aim to solve complex problems with optimal solutions and strategies. Our primary research interests include numerical optimization, operations research, and various real-world applications.</p>
 </section>
 <section id="projects">
-    <h2>Running and Upcoming Projects</h2>
+    <h2>Running & Upcoming Projects</h2>
     <ul>
-        <li>Optimal Transport in Practice: Applying optimal transport theory to data science and real-world problems.</li>
-        <li>Distributional Robust Optimization: Developing robust models under uncertainty with Wasserstein distance.</li>
-        <li>Time-dependent Optimization: Analyzing dynamic optimization problems in various applications.</li>
+        <li>Optimal Transport in Practice</li>
+        <li>Distributional Robust Optimization</li>
+        <li>Time-dependent Optimization</li>
     </ul>
 </section>
 <section id="publications">
-    <h2>Publications</h2>
+    <h2>Publications & Preprints</h2>
     <ul>
-        <li>Hong T.M. Chu, Meixia Lin, Kim-Chuan Toh, Wasserstein distributionally robust optimization and its tractable regularization formulations, Submitted</li>
-        <li>Lei Yang, Ling Liang, Hong T.M. Chu, Kim-Chuan Toh, A Corrected Inexact Proximal Augmented Lagrangian Method with a Relative Error Criterion for a Class of Group-quadratic Regularized Optimal Transport Problems, Journal of Scientific Computing 99 (3), 79.</li>
-        <li>Hong T.M. Chu, Kim-Chuan Toh, Yangjing Zhang, On Regularized Square-root Regression Problems: Distributionally Robust Interpretation and Fast Computations, Journal of Machine Learning Research, 23(308):1–39.</li>
-        <li>Hong T. M. Chu, Ling Liang, Kim-Chuan Toh, Lei Yang, An efficient implementable inexact entropic proximal point algorithm for a class of linear programming problems, Computational Optimization and Applications, (2023): 1-40.</li>
+        <li>2024: Implicit Regularization via Spectral Neural Networks and Non-linear Matrix Sensing</li>
+        <li>2023: Wasserstein Distributionally Robust Optimization (Submitted)</li>
+        <li>2023: Corrected Inexact Proximal Augmented Lagrangian Method (Journal of Scientific Computing)</li>
+        <li>2021: Regularized Square-root Regression Problems (Journal of Machine Learning Research)</li>
+        <li>2020: Inexact Entropic Proximal Point Algorithm (Computational Optimization and Applications)</li>
     </ul>
 </section>
-<section id="teaching">
-    <h2>Teaching</h2>
-    <p>Teaching information will be updated soon.</p>
+<section id="members">
+    <h2>Our People</h2>
+    <ul>
+        <li>Hong T.M. Chu (Principal Investigator)</li>
+        <li>Thai Nguyen (Research Assistant)</li>
+        <li>Tien Nguyen (Student Research Assistant)</li>
+        <li>An Ngo (Student Research Assistant)</li>
+    </ul>
 </section>
 <section id="contact">
     <h2>Contact</h2>
-    <p>Email: hong.ctm@vinuni.edu.vn</p>
-    <p>GitHub: <a href="https://github.com/hongtmchu">hongtmchu</a></p>
+    <p>Email: <a href="mailto:hong.ctm@vinuni.edu.vn">hong.ctm@vinuni.edu.vn</a></p>
 </section>
-<footer>
-    <p>&copy; 2025 OLab</p>
-</footer>
 </body>
 </html>
