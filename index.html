@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLab - Optimization Lab</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            text-align: center;
+            padding: 2em 0;
+            background: linear-gradient(135deg, #4B0082, #4682B4);
+            color: #fff;
+            border-bottom: 5px solid #4B0082;
+        }
+        nav {
+            text-align: center;
+            padding: 1em;
+            background: #4682B4;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 1em;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            display: none;
+            padding: 2em;
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2em;
+            border-radius: 10px;
+            border-left: 5px solid #4682B4;
+        }
+        #home {
+            display: block;
+        }
+        h2 {
+            color: #4B0082;
+            border-bottom: 2px solid #4682B4;
+            padding-bottom: 0.3em;
+        }
+        a {
+            color: #4682B4;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => section.style.display = 'none');
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+<header>
+    <h1>OLab - Optimization Lab</h1>
+    <p>Optimal - Operational - Open</p>
+</header>
+<nav>
+    <a onclick="showSection('home')">Home</a>
+    <a onclick="showSection('projects')">Projects</a>
+    <a onclick="showSection('publications')">Publications</a>
+    <a onclick="showSection('members')">Members</a>
+    <a onclick="showSection('contact')">Contact</a>
+</nav>
+<section id="home">
+    <h2>Welcome to OLab</h2>
+    <p>We aim to solve complex problems with optimal solutions and strategies. Our primary research interests include numerical optimization, operations research, and various real-world applications.</p>
+</section>
+<section id="projects">
+    <h2>Running & Upcoming Projects</h2>
+    <ul>
+        <li>Optimal Transport in Practice</li>
+        <li>Distributional Robust Optimization</li>
+        <li>Time-dependent Optimization</li>
+    </ul>
+</section>
+<section id="publications">
+    <h2>Publications & Preprints</h2>
+    <ul>
+        <li>2024: Implicit Regularization via Spectral Neural Networks and Non-linear Matrix Sensing</li>
+        <li>2023: Wasserstein Distributionally Robust Optimization (Submitted)</li>
+        <li>2023: Corrected Inexact Proximal Augmented Lagrangian Method (Journal of Scientific Computing)</li>
+        <li>2021: Regularized Square-root Regression Problems (Journal of Machine Learning Research)</li>
+        <li>2020: Inexact Entropic Proximal Point Algorithm (Computational Optimization and Applications)</li>
+    </ul>
+</section>
+<section id="members">
+    <h2>Our People</h2>
+    <ul>
+        <li>Hong T.M. Chu (Principal Investigator)</li>
+        <li>Thai Nguyen (Research Assistant)</li>
+        <li>Tien Nguyen (Student Research Assistant)</li>
+        <li>An Ngo (Student Research Assistant)</li>
+    </ul>
+</section>
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:hong.ctm@vinuni.edu.vn">hong.ctm@vinuni.edu.vn</a></p>
+</section>
+</body>
+</html>
